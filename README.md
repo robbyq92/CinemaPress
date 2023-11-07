@@ -227,3 +227,46 @@
 Detailed information on all options and system modules can be found in the [documentation](https://github.com/CinemaPress/CinemaPress).
 
 > Copyright (c) 2014 - ···· [CinemaPress](https://github.com/CinemaPress/CinemaPress)
+
+```
+# --------------- DOODSTREAM (INFO) ---------------
+
+1 ~ https://doodapi.com/api/folder/list?key=DOOD_KEY ~ result.folders.0.name <> custom.imdb_id ~ https://api.themoviedb.org/3/find/[imdb_id]?language=en&external_source=imdb_id&api_key=9e43f45f94705cc8e1d5a0400d19a7b7 ~ movie_results.0.title <> title_en! <> 1 ~ movie_results.0.poster_path <> poster <> 1 ~ movie_results.0.id <> custom.tmdb_id <> 1 ~ "movie" <> type
+
+1 ~ https://doodapi.com/api/folder/list?key=DOOD_KEY ~ result.folders.0.name <> custom.imdb_id ~ https://api.themoviedb.org/3/find/[imdb_id]?language=en&external_source=imdb_id&api_key=9e43f45f94705cc8e1d5a0400d19a7b7 ~ tv_results.0.name <> title_en! <> 1 ~ tv_results.0.poster_path <> poster <> 1 ~ tv_results.0.id <> custom.tmdb_id <> 1 ~ "tv" <> type
+
+# --------------- NINJASTREAM (INFO) ---------------
+
+1 ~ POST>https://api.ninjastream.to/api/folder/get?apiId=NINJA_ID&apiSecretId=NINJA_SECRET ~ result.0.name <> custom.imdb_id ~ https://api.themoviedb.org/3/find/[imdb_id]?language=en&external_source=imdb_id&api_key=9e43f45f94705cc8e1d5a0400d19a7b7 ~ movie_results.0.title <> title_en! <> 1 ~ movie_results.0.poster_path <> poster <> 1 ~ movie_results.0.id <> custom.tmdb_id <> 1 ~ "movie" <> type
+
+1 ~ POST>https://api.ninjastream.to/api/folder/get?apiId=NINJA_ID&apiSecretId=NINJA_SECRET ~ result.0.name <> custom.imdb_id ~ https://api.themoviedb.org/3/find/[imdb_id]?language=en&external_source=imdb_id&api_key=9e43f45f94705cc8e1d5a0400d19a7b7 ~ tv_results.0.name <> title_en! <> 1 ~ tv_results.0.poster_path <> poster <> 1 ~ tv_results.0.id <> custom.tmdb_id <> 1 ~ "tv" <> type
+
+# --------------- STREAMSB (INFO) ---------------
+
+1 ~ https://streamsb.com/api/folder/list?key=STREAMSB_KEY ~ result.folders.0.name <> custom.imdb_id ~ https://api.themoviedb.org/3/find/[imdb_id]?language=en&external_source=imdb_id&api_key=9e43f45f94705cc8e1d5a0400d19a7b7 ~ movie_results.0.title <> title_en! <> 1 ~ movie_results.0.poster_path <> poster <> 1 ~ movie_results.0.id <> custom.tmdb_id <> 1 ~ "movie" <> type
+
+1 ~ https://streamsb.com/api/folder/list?key=STREAMSB_KEY ~ result.folders.0.name <> custom.imdb_id ~ https://api.themoviedb.org/3/find/[imdb_id]?language=en&external_source=imdb_id&api_key=9e43f45f94705cc8e1d5a0400d19a7b7 ~ tv_results.0.name <> title_en! <> 1 ~ tv_results.0.poster_path <> poster <> 1 ~ tv_results.0.id <> custom.tmdb_id <> 1 ~ "tv" <> type
+
+# --------------- STREAMTAPE (INFO) ---------------
+
+1 ~ https://api.streamtape.com/file/listfolder?login=STREAMTAPE_KEY&key=brqG3jwO4KixkB ~ result.folders.0.name <> custom.imdb_id ~ https://api.themoviedb.org/3/find/[imdb_id]?language=en&external_source=imdb_id&api_key=9e43f45f94705cc8e1d5a0400d19a7b7 ~ movie_results.0.title <> title_en! <> 1 ~ movie_results.0.poster_path <> poster <> 1 ~ movie_results.0.id <> custom.tmdb_id <> 1 ~ "movie" <> type
+
+1 ~ https://api.streamtape.com/file/listfolder?login=STREAMTAPE_KEY&key=brqG3jwO4KixkB ~ result.folders.0.name <> custom.imdb_id ~ https://api.themoviedb.org/3/find/[imdb_id]?language=en&external_source=imdb_id&api_key=9e43f45f94705cc8e1d5a0400d19a7b7 ~ tv_results.0.name <> title_en! <> 1 ~ tv_results.0.poster_path <> poster <> 1 ~ tv_results.0.id <> custom.tmdb_id <> 1 ~ "tv" <> type
+
+# --------------- DOODSTREAM ---------------
+
+1 ~ https://doodapi.com/api/folder/list?key=DOOD_KEY ~ result.files ~ [url] <> result.folders <> fld_id <> "https://doodapi.com/api/file/list?key=DOOD_KEY&fld_id=_VALUE_" ~ file_code <> custom.player1 <> <> <> "DOODSTREAM https://dood.to/e/_VALUE_" ~ title <> custom.season ~ title <> custom.episode ~ additional_info.name <> custom.imdb_id
+
+# --------------- NINJASTREAM ---------------
+
+1 ~ POST>https://api.ninjastream.to/api/folder/get?apiId=NINJA_ID&apiSecretId=NINJA_SECRET ~ result.data ~ [url] <> result <> id <> "POST>https://api.ninjastream.to/api/file/get?apiId=NINJA_ID&apiSecretId=NINJA_SECRET&folder=_VALUE_" ~ hashid <> custom.player2 <> <> <> "NINJASTREAM https://ninjastream.to/watch/_VALUE_" ~ name <> custom.season ~ name <> custom.episode ~ additional_info.name <> custom.imdb_id
+
+# --------------- STREAMSB ---------------
+
+1 ~ https://streamsb.com/api/folder/list?key=STREAMSB_KEY ~ result.files ~ [url] <> result.folders <> fld_id <> "https://streamsb.com/api/file/list?key=STREAMSB_KEY&per_page=200&fld_id=_VALUE_" ~ file_code <> custom.player3 <> <> <> "STREAMSB https://sbembed1.com/e/_VALUE_.html" ~ title <> custom.season ~ title <> custom.episode ~ additional_info.name <> custom.imdb_id
+
+# --------------- STREAMTAPE ---------------
+
+1 ~ https://api.streamtape.com/file/listfolder?login=STREAMTAPE_KEY&key=brqG3jwO4KixkB ~ result.files ~ [url] <> result.folders <> id <> "https://api.streamtape.com/file/listfolder?login=STREAMTAPE_KEY&key=brqG3jwO4KixkB&folder=_VALUE_" ~ linkid <> custom.player4 <> <> <> "STREAMTAPE https://streamtape.com/e/_VALUE_" ~ name <> custom.season ~ name <> custom.episode ~ additional_info.name <> custom.imdb_id
+
+```
